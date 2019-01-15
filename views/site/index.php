@@ -1,5 +1,5 @@
 <?php
-
+use yii\helpers\Url;
 /* @var $this yii\web\View */
 
 $this->title = 'My Yii Application';
@@ -9,7 +9,9 @@ $this->title = 'My Yii Application';
     <div class="jumbotron">
     <h1>Courier Management System</h1>
     </div>
-
+    <div>
+    <img src="<?php echo Url::to('@web/images/logo.jpg');?>" style="width:600px">
+    </div>
     <!-- <div class="body-content">
 
         <div class="row">

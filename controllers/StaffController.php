@@ -51,7 +51,7 @@ class StaffController extends Controller
       if ($model->load(Yii::$app->request->post()) && $model->save()) {
           $query = Person::find()->where(['roll_no'=>$model->roll_no])->all();
           $params = $query[0];
-          $this->Mail($params,$model->otp);
+          $this->Mail($params,$model->otp,$model->service);
           return $this->redirect(['pending']);
       }
 
@@ -60,12 +60,12 @@ class StaffController extends Controller
       ]);
     }
 
-  public function Mail($params,$otp){
+  public function Mail($params,$otp,$service){
       Yii::$app->mailer->compose()
         ->setFrom('no-reply@test.com')
         ->setTo($params->email)
         ->setSubject('Amrita Courier Service')
-        ->setTextBody("Greetings $params->name \nThis is to inform you that, you have received a courier. Please collect it from the office. Your OTP for confirmation is $otp")
+        ->setTextBody("Greetings $params->name, \nThis mail is to notify you that, your courier from $service has arrived at the Amrita C S. Please collect it from the office. \nYour OTP for confirmation is $otp.\n\n The Courier will be returned back to the service, if not collected within 8 days. \n\n Amrita Vishwa Vidhyapeetham, \n Amritapuri Campus.")
         ->send();
 
    return $this->render('index');
