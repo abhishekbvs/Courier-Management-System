@@ -49,7 +49,7 @@ class Courier extends \yii\db\ActiveRecord
             'parcel_id' => 'Parcel ID',
             'roll_no' => 'Roll No',
             'date_time' => 'Date Time',
-            'state_id' => 'State ID',
+            'state_id' => 'Status',
             'service' => 'Service',
             'otp' => 'Otp',
         ];

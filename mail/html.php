@@ -15,7 +15,7 @@ use yii\helpers\Html;
 </head>
 <body>
     <?php $this->beginBody() ?>
-    <?php echo $params->name ?>
+    <?= $params->name ?>
     <?php $this->endBody() ?>
 </body>
 </html>

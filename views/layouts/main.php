@@ -30,7 +30,7 @@ AppAsset::register($this);
     <?php
     if(Yii::$app->user->can('admin')){
       NavBar::begin([
-          'brandLabel' => Yii::$app->name,
+          'brandLabel' => "Admin DashBoard",
           'brandUrl' => array('/admin'),
           'options' => [
               'class' => 'navbar-inverse navbar-fixed-top',
@@ -39,7 +39,7 @@ AppAsset::register($this);
     }
     else if (Yii::$app->user->can('staff')){
       NavBar::begin([
-          'brandLabel' => Yii::$app->name,
+          'brandLabel' => "Staff DashBoard",
           'brandUrl' => array('/staff'),
           'options' => [
               'class' => 'navbar-inverse navbar-fixed-top',
@@ -49,7 +49,7 @@ AppAsset::register($this);
     }
     else if(Yii::$app->user->can('student')){
       NavBar::begin([
-          'brandLabel' => Yii::$app->name,
+          'brandLabel' => " Student DashBoard",
           'brandUrl' => array('/student'),
           'options' => [
               'class' => 'navbar-inverse navbar-fixed-top',
@@ -58,7 +58,7 @@ AppAsset::register($this);
 
     }else{
       NavBar::begin([
-          'brandLabel' => Yii::$app->name,
+          'brandLabel' => "Amrita C S",
           'brandUrl' => array('/site/login'),
           'options' => [
               'class' => 'navbar-inverse navbar-fixed-top',
@@ -72,7 +72,7 @@ AppAsset::register($this);
         'items' => [
             ['label' => 'Home', 'url' => ['/site/index']],
             ['label' => 'About', 'url' => ['/site/about']],
-            ['label' => 'Contact', 'url' => ['/site/contact']],
+            // ['label' => 'Contact', 'url' => ['/site/contact']],
             Yii::$app->user->isGuest ? (
                 ['label' => 'Login', 'url' => ['/site/login']]
             ) : (
@@ -101,9 +101,9 @@ AppAsset::register($this);
 
 <footer class="footer">
     <div class="container">
-        <p class="pull-left">&copy; My Company <?= date('Y') ?></p>
+        <p class="pull-left">&copy; Amrita C S <?= date('Y') ?></p>
 
-        <p class="pull-right"><?= Yii::powered() ?></p>
+        <p class="pull-right"><?php echo "Powered by TechWarriors" ?></p>
     </div>
 </footer>
 

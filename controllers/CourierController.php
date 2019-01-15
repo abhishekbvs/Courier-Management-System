@@ -56,14 +56,14 @@ class CourierController extends Controller
         $model = $this->findModel($id);
         $dummy = new Dummy();
         if($dummy->load(Yii::$app->request->post())){
-          if(!strcmp($model->otp,$dummy->otp)){
-            return $this->redirect(['delivered','id'=>$id]);
+
+          if($model->otp==$dummy->otp){
+             return $this->redirect(['delivered','id'=>$id]);
           }
           else{
-            return $this->render('wrong_otp');
-          }
+             return $this->render('wrong_otp');
+           }
         }
-
         return $this->render('view', [
             'model' => $model ,'dummy'=>$dummy,
         ]);

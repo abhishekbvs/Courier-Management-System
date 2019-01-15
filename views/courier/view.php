@@ -31,10 +31,9 @@ $this->params['breadcrumbs'][] = $this->title;
         ],
     ]) ?>
     <?php
-    echo $model->otp;
-      if($model->state_id==1){
+    if($model->state_id==1){
         $form = ActiveForm::begin();
-        echo $form->field($dummy, 'otp')->textarea(['rows'=>'1']);
+        echo $form->field($dummy, 'otp')->textInput(['maxlenght'=>'true']);
         echo Html::submitButton('Delivered', ['class' => 'btn btn-primary']);
         ActiveForm::end();
       }

@@ -15,6 +15,20 @@ $config = [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
             'cookieValidationKey' => '1lHnhhXTte0cgMTmhwhjc1L52SiCkYr_',
         ],
+        'mailer' => [
+           'class' => 'yii\swiftmailer\Mailer',
+           'viewPath' => '@app/mail',
+           'useFileTransport'=>false,
+           'transport'=>[
+             'class' => 'Swift_SmtpTransport',
+             'host'=>'smtp.gmail.com',
+             'username'=>'bvsabhishek@gmail.com',
+             'password'=>'#1#abhishek',
+             'port'=>'587',
+             'encryption'=>'tls',
+
+           ],
+       ],
         'cache' => [
             'class' => 'yii\caching\FileCache',
         ],
@@ -24,13 +38,6 @@ $config = [
         ],
         'errorHandler' => [
             'errorAction' => 'site/error',
-        ],
-        'mailer' => [
-            'class' => 'yii\swiftmailer\Mailer',
-            // send all mails to a file by default. You have to set
-            // 'useFileTransport' to false and configure a transport
-            // for the mailer to send real emails.
-            'useFileTransport' => true,
         ],
         'log' => [
             'traceLevel' => YII_DEBUG ? 3 : 0,
@@ -71,9 +78,8 @@ $config = [
     'as access' => [
         'class' => yii2mod\rbac\filters\AccessControl::class,
         'allowActions' => [
-          '*',
-            'site/*',
-            ]
+          'site/*',
+        ]
     ],
     'params' => $params,
 ];

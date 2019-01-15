@@ -35,7 +35,7 @@ use yii\grid\GridView;
         ],
     ]); ?>
     <?php
-    echo Html::a('Deliverd', ['view', 'id' => $model->visitorpass_id], ['class' => 'btn btn-primary']);
+    echo Html::a('Delivered', ['view', 'id' => $model->visitorpass_id], ['class' => 'btn btn-primary']);
 
      ?>
 </div>
